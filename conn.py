@@ -2,46 +2,39 @@ import mysql.connector
 
 # Replace these values with your MySQL server and database information
 db_config = {
-    "host": "localhost",
-    "user": "root",
-    "password": "",
-    "database": "shopifyai"
+    "host": "shopify.clkyu9vsrxwy.eu-north-1.rds.amazonaws.com",
+    "user": "admin",
+    "password": "ajit5455"
 }
 
-try:
-    # Establish a connection to the MySQL server
-    connection = mysql.connector.connect(**db_config)
 
-    # Create a cursor object to interact with the database
-    cursor = connection.cursor()
+# Establish a connection to the MySQL server
+connection = mysql.connector.connect(**db_config)
 
-    # Execute a simple query (e.g., fetching version)
-    # cursor.execute("SELECT VERSION()")
+# Create a cursor object to interact with the database
+cursor = connection.cursor()
 
-    # # Fetch and print the result
-    # data = cursor.fetchone()
-    # print(f"MySQL Database Version: {data[0]}")
-    # product_data = {
-    #     "title": "The Archived Snowboard",
-    #     "body_html": "This is a gift card for the store",
-    #     "vendor": "Snowboard Vendor",
-    #     "status": "archived",
-    #     "price": 20.00,
-    #     "stock": 20
-    # }
+# Execute a simple query (e.g., fetching version)
+# cursor.execute("SELECT VERSION()")
 
-    # insert_query = "INSERT INTO product (title, body_html, vendor,status,price,stock) VALUES (%(title)s, %(body_html)s, %(vendor)s, %(status)s, %(price)s, %(stock)s)"
+# # Fetch and print the result
+# data = cursor.fetchone()
+# print(f"MySQL Database Version: {data[0]}")
+# product_data = {
+#     "title": "The Archived Snowboard",
+#     "body_html": "This is a gift card for the store",
+#     "vendor": "Snowboard Vendor",
+#     "status": "archived",
+#     "price": 20.00,
+#     "stock": 20
+# }
 
-    # cursor.execute(insert_query, product_data)
+# insert_query = "INSERT INTO product (title, body_html, vendor,status,price,stock) VALUES (%(title)s, %(body_html)s, %(vendor)s, %(status)s, %(price)s, %(stock)s)"
 
-    # Commit the changes to the database
-    connection.commit()
+# cursor.execute(insert_query, product_data)
+
+# Commit the changes to the database
+connection.commit()
   
-except mysql.connector.Error as err:
-    print(f"Error: {err}")
 
-finally:
-    # Close the cursor and connection
-    cursor.close()
-    connection.close()
 
